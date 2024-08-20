@@ -1,0 +1,7 @@
+<h2 class="is-size-2">Repository: <strong>{{@model.repository.name}}</strong></h2>
+<h3 class="is-size-3">Branches:</h3>
+<ul>
+  {{#each @model.branches as |branch|}}
+    <li>{{branch.name}}</li>
+  {{/each}}
+</ul>

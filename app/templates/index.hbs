@@ -1,0 +1,9 @@
+<form {{on "submit" this.onSubmit}}>
+  <div class="field">
+    <label for="organization">
+      GitHub Organization:
+    </label>
+    <Input @value={{this.organization}} class="input" id="organization" />
+  </div>
+  <button type="submit" class="button">Go &raquo;</button>
+</form>

@@ -7,5 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  // Add route declarations here
+  this.route('repositories', { path: '/:org' });
+  this.route('repository', { path: '/:org/:name' });
 });

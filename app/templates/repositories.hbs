@@ -1,0 +1,34 @@
+{{page-title "Repositories"}}
+<div class="field">
+<label class="label" for="visibility">Visibility:</label>
+<div class="select">
+  <select id="visibility" {{on 'change' this.changeType}}>
+    <option value="all">All</option>
+    <option value="private">Private</option>
+    <option value="public">Public</option>
+  </select>
+</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Language</th>
+      <th>Visibility</th>
+      <th>Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each @model as |repository|}}
+      <tr>
+        <td><LinkTo @route="repository" @models={{array repository.owner.login repository.name}}>{{repository.name}}</LinkTo></td>
+        <td>{{repository.language}}</td>
+        <td>{{if repository.private 'Private' 'Public'}}</td>
+        <td><a href="{{repository.html_url}}" target="_blank" rel="nofollow noopener noreferrer" title="Go to GitHub repository">{{repository.html_url}}</a></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>

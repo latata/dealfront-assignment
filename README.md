@@ -1,56 +1,24 @@
 # dealfront-assignment
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Instructions
+1. Install the dependencies using `npm install`
+2. Create .env file in the root of the project and provide GitHub API token and GitHub organization name to run e2e tests against:
+```
+GITHUB_TOKEN=your_github_token
+TEST_ORG=your_github_organization
+```
+3. Run the application using `npm start`
+4. Run the e2e tests using `npm test`
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) (with npm)
-- [Ember CLI](https://cli.emberjs.com/release/)
-- [Google Chrome](https://google.com/chrome/)
-
-## Installation
-
-- `git clone <repository-url>` this repository
-- `cd dealfront-assignment`
-- `npm install`
-
-## Running / Development
-
-- `npm run start`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
-- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-- `npm run test`
-- `npm run test:ember -- --server`
-
-### Linting
-
-- `npm run lint`
-- `npm run lint:fix`
-
-### Building
-
-- `npm exec ember build` (development)
-- `npm run build` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-- [ember.js](https://emberjs.com/)
-- [ember-cli](https://cli.emberjs.com/release/)
-- Development Browser Extensions
-  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+## Notes
+- I did some shortcuts to avoid spending too much time on the assignment (I spent around 4 hours on it - working with Ember is not my daily job and I spent most of the time learning)
+  - I did not implement pagination (it fetches up to 100 repositories)
+  - I did not implement filtering by programming language (because API does not support filtering by programming language - at least I did not find a way to do it)
+  - I did not present number of branches for each repository (because API endpoint does not provide this information)
+  - I did not implement loading indicators (there could be some loading indicators while fetching the data from the API)
+  - I did not implement a proper error handling (there could be some error notices for the users if the API request fails)
+  - I did focus much on the UI - added just basic styles using Bulma
+  - Added only some basic e2e tests using Playwright
+  - I did not add any unit/integration tests
+  - I did not use Ember Data
+  - I did not use Ember CLI Mirage for mocking the API requests

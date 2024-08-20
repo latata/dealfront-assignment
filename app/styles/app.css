@@ -1,1 +1,11 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import url("https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css");
+
+body {
+  margin: 8px;
+}
+
+@media screen and (width >= 640px) {
+  body {
+    margin: 16px 32px;
+  }
+}

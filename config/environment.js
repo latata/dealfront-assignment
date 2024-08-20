@@ -1,6 +1,15 @@
-'use strict';
+const dotenv = require('dotenv');
+const { resolve } = require('node:path');
+
+dotenv.config({
+  path: resolve(__dirname, '../.env'),
+});
 
 module.exports = function (environment) {
+  if (!process.env['GITHUB_TOKEN']) {
+    throw new Error('GITHUB_TOKEN is not set in the environment');
+  }
+
   const ENV = {
     modulePrefix: 'dealfront-assignment',
     environment,
@@ -15,8 +24,7 @@ module.exports = function (environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      GITHUB_TOKEN: process.env['GITHUB_TOKEN'],
     },
   };
 
